@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Picker</title>
+    <link rel="stylesheet" href="moviePickerStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Raleway:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header-nav">
+        <a href="" class="main-header-nav-login-link">Login</a>
+        <a href="" class="main-header-nav-login-link">Sign Up</a>
+      </nav>
+    </header>
+
+    <div class="main-nav">
+      <nav>
+        <ul class="main-nav-items">
+          <li class="main-nav-links">
+            <a href="index.html">Homepage</a>
+          </li>
+          <li class="main-nav-links">
+            <a href="moviePicker.html">Movie Picker</a>
+          </li>
+          <li class="main-nav-links">
+            <a href="watchBeforeDie.html">Watch Before Die</a>
+          </li>
+          <li class="main-nav-links">
+            <a href="profile.html">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="page-content">
+      <div class="select">
+        <h3>What kind of mood do you prefer to watch?</h3>
+        <form class="select-form">
+          <select id="selectForm">
+            <option disabled hidden selected>Select a mood</option>
+            <option disabled></option>
+          </select>
+        </form>
+        <div>
+          <button id="submit-option" class="main-header-nav-login-link">
+            Choose
+          </button>
+        </div>
+      </div>
+      <div class="bar">
+        <div id="myprogressBar">1%</div>
+        <h4 id="bar-text">Generated a movie based your mood!</h4>
+      </div>
+
+      <div class="movie-list">
+        <div class="movie-list-movies-image">
+          <img
+            alt=""
+            class="loadlate"
+            data-tconst="tt0111161"
+            height="240"
+            src="https://p0.pikist.com/photos/523/257/background-blur-soft-blurry-field-nature-pasture-natural-meadow.jpg"
+            width="180"
+          />
+        </div>
+        <div class="movie-list-movies-content">
+          <h3 class="movie-list-movies-content-header"><br /><br /><br /></h3>
+          <p class="movie-list-movies-content-text-small"><br /><br /><br /></p>
+          <p class="movie-list-movies-small-description">
+            <i><br /><br /><br /></i>
+          </p>
+          <p class="movie-list-movies-content-text-small-mood">
+            <br /><br /><br />
+          </p>
+          <p class="movie-list-movies-content-text-small-rating">
+            <br /><br /><br />
+          </p>
+        </div>
+        <div class="movie-list-movies-description">
+          <p class="review">
+            <br /><br /><br />
+            <br />
+            <br />
+          </p>
+          <div class="into-review">
+            <form id="review-form">
+              <input
+                type="text"
+                placeholder="Your Review..."
+                id="review-input"
+              />
+              <button
+                type="button"
+                id="review-submit-option"
+                class="main-header-nav-login-link"
+              >
+                Send Review
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

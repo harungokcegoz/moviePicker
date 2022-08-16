@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.page-content {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+.main-header {
+  padding: 1em 2em;
+}
+.main-header-nav {
+  text-align: right;
+}
+.main-header-nav-login-link {
+  padding: 5px;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background-color: #293a80;
+  border-radius: 6px;
+  border: 1px solid #293a80;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 24px;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+.main-header-nav-login-link:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+}
+.main-header-nav-login-link:active {
+  position: relative;
+  top: 1px;
+}
+
+/* HOMEPAGE - NAV */
+.main-nav {
+  position: sticky;
+  top: 10px;
+  background-color: #293a80;
+  border: 2px solid #293a80;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+}
+.main-nav-links {
+  padding: 0px 30px;
+  list-style: none;
+  display: inline-block;
+}
+.main-nav-links a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+}
+.main-nav-links a:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+  border-radius: 8px;
+}
+.select {
+  text-align: center;
+  background-color: whitesmoke;
+  border: solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  margin: 2em 1em;
+  padding: 2em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.1);
+}
+#selectForm {
+  padding: 5px;
+}
+.select-form {
+  padding: 1em;
+}
+
+.movie-list {
+  background-color: whitesmoke;
+  border: solid rgba(0, 0, 0, 0.2);
+  margin: 2em 1em;
+  border-radius: 3px;
+  padding: 3em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.1);
+}
+.movie-list-movies-image {
+  display: inline-block;
+  width: 24%;
+  float: left;
+}
+.movie-list-movies-content {
+  display: inline-block;
+  padding: 5px 1em;
+  background-color: gainsboro;
+  border: solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  width: 75%;
+}
+.movie-list-movies-description {
+  text-align: justify;
+  font-style: italic;
+}
+.loadlate {
+  border: solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.3);
+}
+#myprogressBar {
+  border: solid rgba(0, 0, 0, 0.2);
+  border-radius: 1.5em;
+  visibility: hidden;
+  width: 50%;
+  height: 35px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 32px;
+  color: black;
+}
+#bar-text {
+  visibility: hidden;
+  text-align: center;
+}
+.into-review {
+  text-align: center;
+  margin-top: 3em;
+}
+#review-input {
+  padding: 3em;
+  width: 82%;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-right: 2em;
+}

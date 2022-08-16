@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.page-content {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+/* HOMEPAGE */
+/* HOMEPAGE - header */
+.main-header {
+  padding: 1em 2em;
+}
+.main-header-nav {
+  text-align: right;
+}
+.main-header-nav-login-link {
+  display: inline-block;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background-color: #293a80;
+  border-radius: 6px;
+  border: 1px solid #293a80;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+.main-header-nav-login-link:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+}
+.main-header-nav-login-link:active {
+  position: relative;
+  top: 1px;
+}
+
+/* HOMEPAGE - NAV */
+.main-nav {
+  position: sticky;
+  top: 10px;
+  background-color: #293a80;
+  border: 2px solid #293a80;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+}
+.main-nav-links {
+  padding: 0px 30px;
+  list-style: none;
+  display: inline-block;
+}
+.main-nav-links a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+}
+.main-nav-links a:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+  border-radius: 8px;
+}
+
+/* HOMEPAGE - aside */
+aside {
+  width: 25%;
+  float: left;
+  padding: auto;
+  margin: 1em;
+}
+.social-media {
+  background-color: #293a80;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.3);
+}
+.aside-links {
+  font-size: 20px;
+  margin: 20px 0px;
+  list-style: none;
+  padding: 5px 0px;
+}
+.aside-links a {
+  text-decoration: none;
+  color: #f7f7f7;
+  padding: 5px;
+}
+.aside-links a:hover {
+  background-color: #537ec5;
+  padding: 5% 10%;
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+  border-radius: 8px;
+}
+
+/* HOMEPAGE - body */
+body {
+  background-color: #f7f7f7;
+  font-family: "Nunito Sans", sans-serif;
+}
+main {
+  display: inline-block;
+  width: 68%;
+  margin: 20px 30px 0px 20px;
+}
+.body-welcome-text {
+  background-color: rgb(233, 233, 233);
+  border-radius: 8px;
+  border: solid rgba(0, 0, 0, 0.2);
+  text-align: justify;
+  padding: 2em;
+  margin: 10px;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+
+.boxes {
+  text-align: center;
+}
+.box-texts {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
+
+.first-info-box {
+  background-color: rgba(41, 58, 128, 0.5);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 5em;
+  width: 30%;
+  margin: 1em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+.middle-info-box {
+  background-color: rgba(41, 58, 128, 0.5);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 5em;
+  width: 30%;
+  margin: 1em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+.last-info-box {
+  background-color: rgba(41, 58, 128, 0.5);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 5em;
+  width: 30%;
+  margin: 1em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+
+.body-welcome-text2 {
+  background-color: rgb(233, 233, 233);
+  border-radius: 8px;
+  border: solid rgba(0, 0, 0, 0.2);
+  text-align: justify;
+  width: 96%;
+  padding: 2em;
+  margin: 3em 0em 3em 2em;
+  /* margin-left: 2em; */
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* HOMEPAGE - footer */
+footer {
+  clear: both;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+.footer-nav-links {
+  padding: 5px;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background-color: #293a80;
+  border-radius: 6px;
+  border: 1px solid #293a80;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 24px;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+.footer-nav-links:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+}
+.footer-nav-links:active {
+  position: relative;
+  top: 1px;
+}

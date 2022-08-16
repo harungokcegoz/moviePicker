@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.page-content {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
+}
+.main-header {
+  padding: 1em 2em;
+}
+.main-header-nav {
+  text-align: right;
+}
+.main-header-nav-login-link {
+  padding: 5px;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background-color: #293a80;
+  border-radius: 6px;
+  border: 1px solid #293a80;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 24px;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+.main-header-nav-login-link:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+}
+.main-header-nav-login-link:active {
+  position: relative;
+  top: 1px;
+}
+
+/* HOMEPAGE - NAV */
+.main-nav {
+  position: sticky;
+  top: 10px;
+  background-color: #293a80;
+  border: 2px solid #293a80;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+}
+.main-nav-links {
+  padding: 0px 30px;
+  list-style: none;
+  display: inline-block;
+}
+.main-nav-links a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+}
+.main-nav-links a:hover {
+  background: linear-gradient(to bottom, #378de5 2%, #293a80 100%);
+  background-color: #378de5;
+  border-radius: 8px;
+}
+.profile-page {
+  width: 70%;
+  margin: 1em 12em;
+  padding: 5em;
+}
+.menu-items {
+  padding: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  margin: 2em;
+  box-shadow: 0px 0px 50px 5px rgba(157, 157, 157, 0.141);
+  border-radius: 5px;
+}
+.user-info {
+  border-bottom: solid rgba(0, 0, 0, 0.2);
+  padding: 1em;
+}
+.profile-image {
+  display: inline-block;
+  width: 20%;
+  margin: 2em 5px;
+}
+.blankProfile {
+  width: 150px;
+  height: 150px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.user-name {
+  margin-top: 2.7em;
+  float: right;
+  display: inline-block;
+  text-decoration: solid;
+  font-size: xx-large;
+}
+.menu-link a {
+  color: black;
+}
+.menu-link :hover {
+  color: blue;
+}
