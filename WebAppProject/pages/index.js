@@ -1,34 +1,36 @@
 // To write moods for select tab
-const api_mood_url = "http://localhost:8080/api/moods/get";
-const api_movies_url = "http://localhost:8080/api/movies/get";
-const api_review_url = "http://localhost:8080/api/review/post";
+const get_mood_url = "http://localhost:8080/getMoods";
+const get_movies_url = "http://localhost:8080/getMovies";
+const get_review_url = "http://localhost:8080/getReviews";
+const add_review_url = "http://localhost:8080/review/add";
 let foundMovie = [];
 let arrayMoods = [];
+let arrayReviews = [];
 let arrayMovies = [];
 var submitOption = document.getElementById("submit-option");
 var sendReviewButton = document.getElementById("review-submit-option");
 var reviewInput = document.getElementById("review-input");
 var select = document.querySelector("select");
 var randomNumber = 0;
-// const post = {
-//   title: "User Review",
-//   body: reviewInput.value,
-//   reviewId: 26,
-// };
 
 getApi();
 
 async function getApi() {
   //storing response
-  const response = await fetch(api_mood_url);
+  const response = await fetch(get_mood_url);
   var dataMood = await response.json();
-  const response1 = await fetch(api_movies_url);
+  const response1 = await fetch(get_movies_url);
   var dataMovie = await response1.json();
+  const response2 = await fetch(get_review_url);
+  var dataReview = await response2.json();
 
-  if (response || response1) {
+  if (response || response1 || response2) {
     hideloader();
   }
-  saveData(dataMood, dataMovie);
+  saveData(dataMood, dataMovie, dataReview);
+  console.log(arrayMoods);
+  console.log(arrayMovies);
+  console.log(arrayReviews);
   dropdownList(arrayMoods);
   submitOption.addEventListener("click", handleSubmit);
   sendReviewButton.addEventListener("click", sendReview);
@@ -36,12 +38,15 @@ async function getApi() {
 
 function hideloader() {}
 
-function saveData(dataMood, dataMovie) {
+function saveData(dataMood, dataMovie, dataReview) {
   for (let r of dataMovie) {
     arrayMovies.push(r);
   }
   for (let r of dataMood) {
     arrayMoods.push(r);
+  }
+  for (let r of dataReview) {
+    arrayReviews.push(r);
   }
 }
 
@@ -64,22 +69,21 @@ function handleSubmit() {
 }
 
 function findTheMovie(userValue) {
-  console.log(foundMovie);
   for (let i = 0; i < arrayMovies.length; i++) {
     if (arrayMovies[i].mood.moodId == userValue) {
       foundMovie.push(arrayMovies[i]);
     }
   }
+
   progressbar();
   showRandomRelevantMovie();
 }
 
 function showRandomRelevantMovie() {
-  console.log(foundMovie[randomNumber]);
-  console.log(randomNumber);
   randomNumber = Math.floor(Math.random() * foundMovie.length);
-  console.log(randomNumber);
+
   var pickedMovie = foundMovie[randomNumber];
+  var pickedMovieId = pickedMovie.id;
   var movieImage = document.querySelector("img");
   movieImage.src = pickedMovie.image;
   var movieName = document.getElementsByClassName(
@@ -100,15 +104,20 @@ function showRandomRelevantMovie() {
     "movie-list-movies-content-text-small-mood"
   );
   movieMood[0].innerHTML = "<b>Mood:</b> '" + pickedMovie.mood.moodName + "'";
+
   var movieRating = document.getElementsByClassName(
     "movie-list-movies-content-text-small-rating"
   );
-  movieRating[0].innerHTML =
-    "<b>IMDb Rating:</b> " + pickedMovie.review[0].rating;
+
   var movieReview = document.getElementsByClassName("review");
-  for (let i = 0; i < pickedMovie.review.length; i++) {
-    movieReview[0].innerHTML =
-      "</br>REVIEW " + (i + 1) + ":</br></br> " + pickedMovie.review[i].review;
+  for (let i = 0; i < arrayReviews.length; i++) {
+    if (arrayReviews[i].movie.id == pickedMovieId) {
+      console.log(arrayReviews[i]);
+      movieReview[0].innerHTML =
+        "</br>REVIEWS " + ":</br></br> " + arrayReviews[i].review;
+      movieRating[0].innerHTML =
+        "<b>IMDb Rating:</b> " + arrayReviews[i].rating;
+    }
   }
 }
 
@@ -129,47 +138,11 @@ function progressbar() {
     }
   }
 }
-// function sendReview() {
-//   var element = document.getElementById("review-form");
-//   element.addEventListener("click", function (e) {
-//     e.preventDefault();
-
-//     const formData = new FormData(this);
-//     fetch(api_review_url, {
-//       method: "POST",
-//       body: formData,
-//     })
-//       .then(function (response) {
-//         return response.text();
-//       })
-//       .then(function (text) {
-//         console.log(text);
-//       })
-//       .catch(function (error) {
-//         console.error(error);
-//       });
-//   });
-// }
-// const newPost = (post) => {
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify(post),
-//     headers: new Headers({
-//       "Contect-Type": "application/json",
-//     }),
-//   };
-//   return fetch("http://localhost:8080/api/review/post", options)
-//     .then((res) => res.json())
-//     .then((res) => console.log(res))
-//     .catch((error) => console.error("Error: " + error));
-// };
-// Sending and receiving data in JSON format using POST method
-//
 
 function sendReview() {
-  console.log("Send Review");
+  var lastReviewNumber = 26;
   var xhr = new XMLHttpRequest();
-  var url = "http://localhost:8080/api/review/post";
+  var url = "http://localhost:8080/review/add";
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -182,10 +155,11 @@ function sendReview() {
   console.log(randomNumber);
   console.log(foundMovie[randomNumber]);
   var data = JSON.stringify({
+    id: lastReviewNumber,
     review: reviewInput.value,
-    movieId: foundMovie[randomNumber].id,
+    movie: foundMovie[randomNumber],
   });
-
+  lastReviewNumber++;
   console.log(data);
   xhr.send(data);
 }
