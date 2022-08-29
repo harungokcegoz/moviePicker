@@ -1,0 +1,6 @@
+nl.saxion.webapps.moviepicker
+nl.saxion.webapps.moviepicker.config
+nl.saxion.webapps.moviepicker.controller
+nl.saxion.webapps.moviepicker.entity
+nl.saxion.webapps.moviepicker.repository
+nl.saxion.webapps.moviepicker.service

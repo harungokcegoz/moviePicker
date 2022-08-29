@@ -41,17 +41,17 @@ public class ReviewController {
         reviewService.addNewReview(review);
     }
 
-    @DeleteMapping(path = "{reviewsId}")
-    public void deleteReview(@PathVariable("reviewsId") Long reviewId) {
-        reviewService.deleteReview(reviewId);
-    }
-
-    @PutMapping(path = "{reviewsId}")
-    public void updateReview(
-            @PathVariable("reviewsId") Long reviewId,
-            @RequestParam(required = false) String review,
-            @RequestParam(required = false) double rating) {
-        reviewService.updateReview(reviewId, review, rating);
-    }
+//    @DeleteMapping(path = "{reviewsId}")
+//    public void deleteReview(@PathVariable("reviewsId") Long reviewId) {
+//        reviewService.deleteReview(reviewId);
+//    }
+//
+//    @PutMapping(path = "{reviewsId}")
+//    public void updateReview(
+//            @PathVariable("reviewsId") Long reviewId,
+//            @RequestParam(required = false) String review,
+//            @RequestParam(required = false) double rating) {
+//        reviewService.updateReview(reviewId, review, rating);
+//    }
 
 }

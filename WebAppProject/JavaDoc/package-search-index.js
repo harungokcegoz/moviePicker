@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"nl.saxion.webapps.moviepicker"},{"l":"nl.saxion.webapps.moviepicker.config"},{"l":"nl.saxion.webapps.moviepicker.controller"},{"l":"nl.saxion.webapps.moviepicker.entity"},{"l":"nl.saxion.webapps.moviepicker.repository"},{"l":"nl.saxion.webapps.moviepicker.service"}];updateSearchResults();
