@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/")
+@CrossOrigin
 @RestController
 @RequestMapping()
 public class MoodController {
@@ -25,18 +25,4 @@ public class MoodController {
         return moodService.getMood();
     }
 
-//    @PostMapping(path = "/post")
-//    public void registerNewMood(Mood mood){
-//            moodService.addNewMood(mood);
-//    }
-//
-//    @DeleteMapping(path = "{moodName}")
-//    public void deleteMood(@PathVariable("moodName") String moodName) {
-//        moodService.deleteMood(moodName);
-//    }
-//
-//    @PutMapping(path = "{moodName}")
-//    public void updateMood(@PathVariable("moodName") String moodName) {
-//        moodService.deleteMood(moodName);
-//    }
 }

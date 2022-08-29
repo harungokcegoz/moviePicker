@@ -10,6 +10,7 @@ let arrayMovies = [];
 var submitOption = document.getElementById("submit-option");
 var sendReviewButton = document.getElementById("review-submit-option");
 var reviewInput = document.getElementById("review-input");
+var ratingInput = document.getElementById("rating-input");
 var select = document.querySelector("select");
 var randomNumber = 0;
 
@@ -28,12 +29,20 @@ async function getApi() {
     hideloader();
   }
   saveData(dataMood, dataMovie, dataReview);
-  console.log(arrayMoods);
-  console.log(arrayMovies);
-  console.log(arrayReviews);
+
   dropdownList(arrayMoods);
   submitOption.addEventListener("click", handleSubmit);
-  sendReviewButton.addEventListener("click", sendReview);
+  sendReviewButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    let data = {};
+
+    data["id"] = 26;
+    data["review"] = reviewInput.value;
+    data["rating"] = ratingInput.value;
+    data["movie"] = foundMovie[randomNumber];
+
+    postNewReview(data);
+  });
 }
 
 function hideloader() {}
@@ -112,7 +121,6 @@ function showRandomRelevantMovie() {
   var movieReview = document.getElementsByClassName("review");
   for (let i = 0; i < arrayReviews.length; i++) {
     if (arrayReviews[i].movie.id == pickedMovieId) {
-      console.log(arrayReviews[i]);
       movieReview[0].innerHTML =
         "</br>REVIEWS " + ":</br></br> " + arrayReviews[i].review;
       movieRating[0].innerHTML =
@@ -139,27 +147,14 @@ function progressbar() {
   }
 }
 
-function sendReview() {
-  var lastReviewNumber = 26;
-  var xhr = new XMLHttpRequest();
-  var url = "http://localhost:8080/review/add";
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var json = JSON.parse(xhr.responseText);
-      console.log(json);
-    }
-  };
-  console.log(randomNumber);
-  console.log(foundMovie[randomNumber]);
-  var data = JSON.stringify({
-    id: lastReviewNumber,
-    review: reviewInput.value,
-    movie: foundMovie[randomNumber],
+async function postNewReview(data) {
+  const response = await fetch(add_review_url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   });
-  lastReviewNumber++;
-  console.log(data);
-  xhr.send(data);
+  alert("The review is added!");
+  await response.json();
 }

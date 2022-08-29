@@ -26,7 +26,6 @@ public class ReviewService {
         if (exists){
             throw new IllegalStateException("Review with ID " + newReview.getId() + " does already exist!");
         }else{
-
             reviewRepository.save(newReview);
         }
     }

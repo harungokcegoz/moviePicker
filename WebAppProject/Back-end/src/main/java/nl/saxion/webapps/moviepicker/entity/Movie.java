@@ -31,42 +31,10 @@ public class Movie {
     @ManyToOne
     @JoinColumn(name = "mood_id")
     private Mood mood;
-    @JsonIgnore
-    @OneToMany(mappedBy = "movie")
-    private List<Review> review;
-
 
     public Movie() {
     }
 
-    //
-//    public Movie(Long id, String name, String category, String description, int releaseYear, String image) {
-//        this.id = id;
-//        this.name = name;
-//        this.category = category;
-//        this.description = description;
-//        this.releaseYear = releaseYear;
-//        this.image = image;
-//
-//    }
-//
-//    public Movie(Long id) {
-//        this.id = id;
-//    }
-
-//    public Movie(Long id, String name, String category, String description, int releaseYear, String image, Mood mood, List<Review> review) {
-//        this.id = id;
-//        this.name = name;
-//        this.category = category;
-//        this.description = description;
-//        this.releaseYear = releaseYear;
-//        this.image = image;
-//        this.mood = mood;
-//        this.review = review;
-//    }
-
-//    public Movie() {
-//    }
 
     public Long getId() {
         return id;
@@ -124,11 +92,4 @@ public class Movie {
         this.mood = mood;
     }
 
-    public List<Review> getReview() {
-        return review;
-    }
-
-    public void setReview(List<Review> review) {
-        this.review = review;
-    }
 }

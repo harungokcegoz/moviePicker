@@ -20,6 +20,12 @@ public class Review {
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
+    public Review(Long id, String review, double rating, Movie movie) {
+        this.id = id;
+        this.review = review;
+        this.rating = rating;
+        this.movie = movie;
+    }
 
     public Review() {
     }

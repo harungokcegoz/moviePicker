@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/")
+@CrossOrigin
 @RestController
 
 public class MovieController {
@@ -23,27 +23,11 @@ public class MovieController {
     public List<Movie> getAllMovies(){
         return movieService.getMovie();
     }
-    @GetMapping(path = "/movie/{movieId}")
-    public Optional<Movie> getMovieById(@PathVariable("movie_id") Long movieId){
+
+    @GetMapping(path = "/getMovie/{movieId}")
+    public Optional<Movie> getMovieById(@PathVariable Long movieId){
         Optional<Movie> movie = movieService.getMovieById(movieId);
         return movie;
     }
 
-//    @PostMapping(path = "/post")
-//    public void registerNewMovie(@RequestBody Movie movie){
-//        movieService.addNewMovie(movie);
-//    }
-//    @DeleteMapping(path = "{moviesId}")
-//    public void deleteMovie(@PathVariable("movie_id") Long movieId){
-//        movieService.deleteMovie(movieId);
-//    }
-//    @PutMapping(path = "{moviesId}")
-//    public void updateStudent(
-//            @PathVariable("moviesId") Long moviesId,
-//            @RequestParam(required = false) String name,
-//            @RequestParam(required = false) String category,
-//            @RequestParam(required = false) String description,
-//            @RequestParam(required = false) int releaseYear) {
-//            movieService.updateMovie(moviesId, name, category, description, releaseYear);
-//    }
 }

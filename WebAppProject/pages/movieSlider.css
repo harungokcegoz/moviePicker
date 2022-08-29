@@ -11,6 +11,8 @@
   border: solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
 }
+/* HOMEPAGE */
+/* HOMEPAGE - header */
 .main-header {
   padding: 1em 2em;
 }
@@ -18,7 +20,7 @@
   text-align: right;
 }
 .main-header-nav-login-link {
-  padding: 5px;
+  display: inline-block;
   box-shadow: inset 0px 1px 0px 0px #bbdaf7;
   background-color: #293a80;
   border-radius: 6px;
@@ -26,8 +28,8 @@
   color: #ffffff;
   font-size: 15px;
   font-weight: bold;
-  text-decoration: none;
   padding: 6px 24px;
+  text-decoration: none;
   text-shadow: 0px 1px 0px #528ecc;
 }
 .main-header-nav-login-link:hover {
@@ -67,43 +69,84 @@
   background-color: #378de5;
   border-radius: 8px;
 }
-.profile-page {
-  width: 70%;
-  margin: 1em 12em;
-  padding: 5em;
+
+/* HOMEPAGE - body */
+body {
+  background-color: #f7f7f7;
+  font-family: "Nunito Sans", sans-serif;
 }
-.menu-items {
-  padding: 2em;
-  border: solid rgba(0, 0, 0, 0.2);
-  margin: 2em;
-  box-shadow: 0px 0px 50px 5px rgba(157, 157, 157, 0.141);
-  border-radius: 5px;
-}
-.user-info {
-  border-bottom: solid rgba(0, 0, 0, 0.2);
-  padding: 1em;
-}
-.profile-image {
+main {
   display: inline-block;
-  width: 20%;
-  margin: 2em 5px;
+  margin: 20px 30px 0px 20px;
 }
-.blankProfile {
-  width: 150px;
-  height: 150px;
-  border: 3px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
+.slider {
+  margin: auto;
 }
-.user-name {
-  margin-top: 2.7em;
+.pre-btn {
+  float: left;
+  display: inline-block;
+  margin: auto;
+  margin-top: 20em;
+  width: 10%;
+  padding: 2em;
+}
+.nxt-btn {
   float: right;
   display: inline-block;
-  text-decoration: solid;
-  font-size: xx-large;
+  margin-top: 20em;
+  width: 10%;
+  padding: 2em;
 }
-.menu-link a {
-  color: black;
+
+.header-title {
+  text-align: center;
+  border-bottom: solid rgba(0, 0, 0, 0.2);
+  margin: 2em;
 }
-.menu-link :hover {
-  color: blue;
+.movie-container {
+  display: inline-block;
+  width: 80%;
+}
+.movie-card {
+  display: inline-block;
+  border: solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.3);
+  margin: 3em;
+}
+.movie-card-image {
+  width: fit-content;
+  margin: auto;
+}
+.movie-card-info {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.movie-list-movies-image {
+  display: inline-block;
+  width: 24%;
+  float: left;
+}
+.movie-list-movies-content {
+  display: inline-block;
+  background-color: gainsboro;
+  border: solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  width: 70%;
+}
+.movie-list-movies-description {
+  text-align: justify;
+  font-style: italic;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em;
+  border: solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.2);
 }

@@ -1,5 +1,6 @@
 package nl.saxion.webapps.moviepicker.controller;
 
+import nl.saxion.webapps.moviepicker.config.ReviewConfig;
 import nl.saxion.webapps.moviepicker.entity.Movie;
 
 import nl.saxion.webapps.moviepicker.entity.Review;
@@ -11,11 +12,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/")
+@CrossOrigin
 @RestController
 @RequestMapping
 public class ReviewController {
     private final ReviewService reviewService;
+    private Long id;
+    private double rating;
+    private String review;
+    private Long movie;
 
 
     @Autowired
@@ -30,10 +35,10 @@ public class ReviewController {
         return reviewList;
     }
 
-    @PostMapping(value = "/review/add/")
-    public ResponseEntity<String> addReview(@RequestBody Review review, @PathVariable Long moviesId){
+    @PostMapping(value = "/review/add")
+    public void addReview(@RequestBody Review review){
+//        Review r = new Review(id, review,rating,movieId);
         reviewService.addNewReview(review);
-        return ResponseEntity.ok("Review Saved");
     }
 
     @DeleteMapping(path = "{reviewsId}")
